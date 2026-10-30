@@ -1,20 +1,24 @@
 :root {
     color-scheme: light;
-    --page-background: #edf4f5;
-    --surface: #ffffff;
-    --text-primary: #183746;
-    --text-secondary: #526873;
-    --accent: #16877d;
-    --accent-soft: #e6f4f1;
-    --border: #d9e5e6;
-    --border-strong: #a9ccca;
-    --hover-background: rgb(255 255 255 / 12%);
-    --shadow-soft: 0 14px 34px rgb(24 55 70 / 9%);
+    --page-background: #f5eee3;
+    --surface: #fffdf8;
+    --text-primary: #30243c;
+    --text-secondary: #665b69;
+    --accent: #e47727;
+    --accent-soft: #fae7cc;
+    --marigold: #d7a928;
+    --border: #e8d9c5;
+    --border-strong: #d5ad76;
+    --hover-background: rgb(228 119 39 / 18%);
+    --shadow-soft: 0 16px 38px rgb(48 36 60 / 12%);
 }
 
 body {
     min-height: 100vh;
-    background: var(--page-background);
+    background:
+        radial-gradient(ellipse at 92% 4%, rgb(215 169 40 / 18%), transparent 24rem),
+        radial-gradient(ellipse at 5% 90%, rgb(92 52 106 / 8%), transparent 30rem),
+        var(--page-background);
     color: var(--text-primary);
     font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     font-size: 1rem;
@@ -24,8 +28,9 @@ body {
 
 .navbar {
     padding: 1rem clamp(1rem, 4vw, 3.5rem);
-    background-color: #183f50 !important;
-    border-color: #183f50 !important;
+    background-color: #30243c !important;
+    border-color: #30243c !important;
+    box-shadow: 0 3px 0 var(--marigold);
 }
 
 .navbar .container-fluid {
@@ -33,7 +38,7 @@ body {
 }
 
 .navbar-brand {
-    color: #ffffff !important;
+    color: #fff8eb !important;
     font-size: 1.05rem;
     font-weight: 650;
     letter-spacing: -0.02em;
@@ -43,7 +48,7 @@ body {
     position: relative;
     padding: 0.45rem 0.7rem;
     border-radius: 0.3rem;
-    color: #dce9ec !important;
+    color: #eee3d7 !important;
     font-size: 0.92rem;
     font-weight: 500;
     transition: color 160ms ease, background-color 160ms ease;
@@ -52,13 +57,13 @@ body {
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link:focus-visible {
     background-color: var(--hover-background);
-    color: #ffffff !important;
+    color: #ffc078 !important;
 }
 
 .navbar-nav .nav-link:focus-visible,
 .navbar-brand:focus-visible,
 main a:focus-visible {
-    outline: 2px solid var(--accent);
+    outline: 2px solid var(--marigold);
     outline-offset: 3px;
 }
 
@@ -67,7 +72,7 @@ main.container-fluid {
     margin: clamp(1.5rem, 5vw, 3.5rem) auto;
     padding: clamp(1.5rem, 5vw, 3.5rem) !important;
     border: 1px solid var(--border);
-    border-top: 3px solid var(--accent);
+    border-top: 4px solid var(--accent);
     border-radius: 0.65rem;
     background: var(--surface);
     box-shadow: var(--shadow-soft);
@@ -75,18 +80,46 @@ main.container-fluid {
 
 main h1 {
     margin-bottom: 0.8rem;
-    color: #183f50;
+    color: #30243c;
     font-size: clamp(1.8rem, 4vw, 2.35rem);
     font-weight: 650;
     letter-spacing: -0.04em;
     line-height: 1.2;
 }
 
+.home-title::after,
+.catalog-title::after,
+.services-title::after,
+.contact-title::after {
+    content: "";
+    display: inline-block;
+    width: 2.4rem;
+    height: 2.4rem;
+    margin-left: 0.55rem;
+    vertical-align: -0.45rem;
+}
+
+.home-title::after {
+    background: url("../images/calabaza.svg") center / contain no-repeat;
+}
+
+.catalog-title::after {
+    background: url("../images/libro-embrujado.svg") center / contain no-repeat;
+}
+
+.services-title::after {
+    background: url("../images/vela-cempasuchil.svg") center / contain no-repeat;
+}
+
+.contact-title::after {
+    background: url("../images/calavera-cempasuchil.svg") center / contain no-repeat;
+}
+
 main h2.h4 {
     margin: 2.25rem 0 1.15rem !important;
     padding-bottom: 0.7rem;
-    border-bottom: 2px solid var(--accent-soft);
-    color: #183f50;
+    border-bottom: 2px solid var(--marigold);
+    color: #49304f;
     font-size: 1.15rem;
     font-weight: 600;
     letter-spacing: -0.015em;
@@ -95,7 +128,7 @@ main h2.h4 {
 main .lead {
     max-width: 70ch;
     margin-bottom: 1.7rem;
-    color: #39766f;
+    color: #ae4c20;
     font-size: 1.1rem;
     line-height: 1.65;
 }
@@ -106,7 +139,7 @@ main p {
 }
 
 main p strong {
-    color: var(--accent);
+    color: #a64b1e;
     font-weight: 600;
 }
 
@@ -115,7 +148,7 @@ main p:has(> strong) {
     padding: 0.85rem 1rem;
     border: 1px solid var(--border);
     border-radius: 0.4rem;
-    background-color: #f5f9f8;
+    background-color: #fff8e9;
 }
 
 main ul {
@@ -128,7 +161,7 @@ main ul li {
     margin-bottom: 0.7rem;
     padding: 1rem 1.15rem;
     border: 1px solid var(--border);
-    border-left: 3px solid #9accc5;
+    border-left: 3px solid var(--marigold);
     border-radius: 0.4rem;
     background-color: var(--surface);
     color: var(--text-secondary);
@@ -141,19 +174,19 @@ main ul li:hover {
 }
 
 main ul li strong {
-    color: #183f50;
+    color: #49304f;
     font-weight: 600;
 }
 
 main a {
-    color: #087c72;
-    text-decoration-color: #7fbab3;
+    color: #aa481d;
+    text-decoration-color: var(--marigold);
     text-underline-offset: 0.2em;
     overflow-wrap: anywhere;
 }
 
 main a:hover {
-    color: #075e57;
+    color: #773313;
     text-decoration-color: currentColor;
 }
 

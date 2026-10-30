@@ -1,0 +1,191 @@
+:root {
+    color-scheme: light;
+    --page-background: #edf4f5;
+    --surface: #ffffff;
+    --text-primary: #183746;
+    --text-secondary: #526873;
+    --accent: #16877d;
+    --accent-soft: #e6f4f1;
+    --border: #d9e5e6;
+    --border-strong: #a9ccca;
+    --hover-background: rgb(255 255 255 / 12%);
+    --shadow-soft: 0 14px 34px rgb(24 55 70 / 9%);
+}
+
+body {
+    min-height: 100vh;
+    background: var(--page-background);
+    color: var(--text-primary);
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+.navbar {
+    padding: 1rem clamp(1rem, 4vw, 3.5rem);
+    background-color: #183f50 !important;
+    border-color: #183f50 !important;
+}
+
+.navbar .container-fluid {
+    gap: 1.5rem;
+}
+
+.navbar-brand {
+    color: #ffffff !important;
+    font-size: 1.05rem;
+    font-weight: 650;
+    letter-spacing: -0.02em;
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    padding: 0.45rem 0.7rem;
+    border-radius: 0.3rem;
+    color: #dce9ec !important;
+    font-size: 0.92rem;
+    font-weight: 500;
+    transition: color 160ms ease, background-color 160ms ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus-visible {
+    background-color: var(--hover-background);
+    color: #ffffff !important;
+}
+
+.navbar-nav .nav-link:focus-visible,
+.navbar-brand:focus-visible,
+main a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+main.container-fluid {
+    width: min(100% - 2rem, 940px);
+    margin: clamp(1.5rem, 5vw, 3.5rem) auto;
+    padding: clamp(1.5rem, 5vw, 3.5rem) !important;
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--accent);
+    border-radius: 0.65rem;
+    background: var(--surface);
+    box-shadow: var(--shadow-soft);
+}
+
+main h1 {
+    margin-bottom: 0.8rem;
+    color: #183f50;
+    font-size: clamp(1.8rem, 4vw, 2.35rem);
+    font-weight: 650;
+    letter-spacing: -0.04em;
+    line-height: 1.2;
+}
+
+main h2.h4 {
+    margin: 2.25rem 0 1.15rem !important;
+    padding-bottom: 0.7rem;
+    border-bottom: 2px solid var(--accent-soft);
+    color: #183f50;
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+}
+
+main .lead {
+    max-width: 70ch;
+    margin-bottom: 1.7rem;
+    color: #39766f;
+    font-size: 1.1rem;
+    line-height: 1.65;
+}
+
+main p {
+    max-width: 75ch;
+    color: var(--text-secondary);
+}
+
+main p strong {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+main p:has(> strong) {
+    margin-bottom: 0.7rem;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 0.4rem;
+    background-color: #f5f9f8;
+}
+
+main ul {
+    margin: 1rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+main ul li {
+    margin-bottom: 0.7rem;
+    padding: 1rem 1.15rem;
+    border: 1px solid var(--border);
+    border-left: 3px solid #9accc5;
+    border-radius: 0.4rem;
+    background-color: var(--surface);
+    color: var(--text-secondary);
+    transition: border-color 160ms ease, background-color 160ms ease;
+}
+
+main ul li:hover {
+    border-color: var(--border-strong);
+    background-color: var(--accent-soft);
+}
+
+main ul li strong {
+    color: #183f50;
+    font-weight: 600;
+}
+
+main a {
+    color: #087c72;
+    text-decoration-color: #7fbab3;
+    text-underline-offset: 0.2em;
+    overflow-wrap: anywhere;
+}
+
+main a:hover {
+    color: #075e57;
+    text-decoration-color: currentColor;
+}
+
+@media (max-width: 576px) {
+    .navbar {
+        padding: 0.85rem 1rem;
+    }
+
+    .navbar .container-fluid {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .navbar-nav {
+        flex-wrap: wrap;
+        gap: 0.2rem !important;
+    }
+
+    main.container-fluid {
+        width: calc(100% - 1.25rem);
+        margin: 1rem auto;
+        padding: 1.4rem 1.1rem !important;
+        border-radius: 0.45rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
